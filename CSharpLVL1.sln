@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uni", "..\Uni\Uni.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uni.Tests", "..\Uni.Tests\Uni.Tests.csproj", "{A8B9C86E-1A17-43A4-BDA1-293944517914}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverExample", "..\WebDriverExample\WebDriverExample.csproj", "{51D67C46-6A59-4674-B7DD-3DCCC424F8CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDriverExample", "..\WebDriverExample\WebDriverExample.csproj", "{51D67C46-6A59-4674-B7DD-3DCCC424F8CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
