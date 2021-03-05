@@ -7,9 +7,6 @@ namespace CSharpLVL1.Models
 {
     public class Book
     {
-        private double _price;
-        private string _title;
-
         public Book(string title, string author, double price)
         {
             Title = title;
@@ -20,43 +17,35 @@ namespace CSharpLVL1.Models
             {
                 throw new ArgumentException("The name cannot start with a digit");
             }
-        }
 
-        public string Title
-        {
-            get => _title;
-            set
+            if (Title.Length<3)
             {
-                if (value.Length < 4)
-                {
-                    throw new ArgumentException("Title ist not valid");
-                }
-                _title = value;
+                throw new ArgumentException("The title should contain more than 3 symbols");
+            }
+
+            if (Price <= 0)
+            {
+                throw new ArgumentException("The price can not be negative");
             }
         }
 
+        public string Title { get; set; }
         public string Author { get; set; }
-
-        public virtual double Price
-        {
-            get => _price;
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Price not valid");
-                }
-                _price = value;
-            }
-        }
+        public virtual double Price { get; set; }
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder("In the Library you can find:");
+            var sb = new StringBuilder();
+            sb.Append(string.Format("Title {0}", Title));
             sb.AppendLine();
-            sb.AppendLine($"{Title} by {Author}");
-            sb.AppendLine($"Price {Price:f1} Euro");
-            return sb.ToString();
+            sb.Append(string.Format("Author {0}", Author));
+            sb.AppendLine();
+            sb.Append($"Price {Price:f2} Euro");
+            //var alternativeString = $"Title {Title} {Environment.NewLine}" +
+            //                        $"Author {Author}{Environment.NewLine} Price {Price:f2} Euro";
+            return sb.ToString(); 
         }
     }
+
+    
 }
